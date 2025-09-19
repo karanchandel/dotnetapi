@@ -72,3 +72,4 @@ D:\CoverMantra\LoopAPI\obj\Debug\net9.0\refint\LoopAPI.dll
 D:\CoverMantra\LoopAPI\obj\Debug\net9.0\LoopAPI.pdb
 D:\CoverMantra\LoopAPI\obj\Debug\net9.0\LoopAPI.genruntimeconfig.cache
 D:\CoverMantra\LoopAPI\obj\Debug\net9.0\ref\LoopAPI.dll
+D:\CoverMantra\LoopAPI\obj\Debug\net9.0\LoopAPI.sourcelink.json

@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-
 // SQL Server connection string
-string connectionString = @"Data Source=DESKTOP-8RH76VU\SQLEXPRESS;Database=API;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;Packet Size=4096;Command Timeout=0";
+string connectionString = @"Data Source=DESKTOP-8RH76VU\SQLEXPRESS;Initial Catalog=API;Integrated Security=True;TrustServerCertificate=True;";
+
+// Simple test endpoint
+app.MapGet("/", () => Results.Ok("✅ API is running..."));
 
 // POST /insert endpoint
 app.MapPost("/insert", async (UserDetails user) =>
