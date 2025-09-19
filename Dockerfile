@@ -1,16 +1,16 @@
-# Use official .NET 9 SDK image
+# Build stage
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /app
+WORKDIR /src
 
-# Copy csproj and restore dependencies
-COPY *.csproj ./
-RUN dotnet restore
+# Copy csproj and restore
+COPY LoopAPI.csproj ./
+RUN dotnet restore "LoopAPI.csproj"
 
-# Copy everything else and build
-COPY . ./
-RUN dotnet publish -c Release -o out
+# Copy everything else
+COPY . .
+RUN dotnet publish "LoopAPI.csproj" -c Release -o /app/out
 
-# Build runtime image
+# Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
 COPY --from=build /app/out .
